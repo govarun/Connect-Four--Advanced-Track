@@ -223,7 +223,12 @@ def computer_move(board):
         if possible_moves_arr[i] == best_score and is_valid(board, i):
             best_scores_arr.append(i)# get the first move encountered with this best score 
             break
-    return best_scores_arr[0]
+   if len(best_scores_arr) > 0:
+        return best_scores_arr[0]
+    else:
+        for x in range(board_width):
+            if board[x][0] == None:
+                return x
 
 
 def computer_move_animation(board, col):
